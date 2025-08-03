@@ -18,6 +18,24 @@ This project is a complete, containerized CRUD (Create, Read, Update, Delete) AP
 
 * CI/CD Ready: Includes a GitHub Actions workflow for automated testing.
 
+### Database Design
+
+The application uses a MySQL database. GORM automatically creates and manages the database schema based on the models defined in the code. For this project, a single table named `books` is created.
+
+* Table: `books`
+
+  * `id` (BIGINT, Primary Key, Auto-Increment): A unique identifier for each book.
+
+  * `created_at` (DATETIME): Timestamp automatically set when a book record is created.
+
+  * `updated_at` (DATETIME): Timestamp automatically updated when a book record is modified.
+
+  * `deleted_at` (DATETIME, Index): Timestamp used for soft deletes. When a book is deleted, this field is populated instead of removing the row, allowing for potential recovery.
+
+  * `title` (LONGTEXT): The title of the book.
+
+  * `author` (LONGTEXT): The author of the book.
+
 ### Prerequisites
 
 Before you begin, ensure you have the following installed on your local machine:

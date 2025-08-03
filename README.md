@@ -40,17 +40,21 @@ This method runs both the API and the MySQL database inside Docker containers. I
 
 1. Clone the Repository:
 
-`git clone <repository-url>` <br/>
-`cd go-gin-gorm-crud`
+```
+git clone <repository-url>
+cd go-gin-gorm-crud
+```
 
 2. Build and Run with Docker Compose:<br/>
 Open a terminal in the project's root directory and run the following command. This will build the Go application's Docker image and start both the API and database containers.
 
-`docker-compose up --build`
+```
+docker-compose up --build
+```
 
-(You can add the `-d` flag to run it in the background: `docker-compose up --build -d`)
+(You can add the ```-d``` flag to run it in the background: ```docker-compose up --build -d```)
 
-3. That's it! The API is now running and accessible at `http://localhost:8080`.
+3. That's it! The API is now running and accessible at ```http://localhost:8080```.
 
 #### Method 2: Running Locally for Development (Hybrid Mode)
 
@@ -59,14 +63,16 @@ This method is ideal for active development. You will run the database inside a 
 1. Start the Database Container Only:<br/>
 In your terminal, run the following command to start just the MySQL service from your `docker-compose.yml` file.
 
-`docker-compose up -d db`
+```
+docker-compose up -d db
+```
 
 2. Create the Local Configuration File:<br/>
 Your Go application needs to know how to connect to the database.
 
-* In the root of the project, create a new file named `.env`.
+* In the root of the project, create a new file named ```.env```.
 
-* Copy and paste the following content into it. This tells your app to connect to the database running on `localhost`.
+* Copy and paste the following content into it. This tells your app to connect to the database running on ```localhost```.
 
 ```
 # Local Development Database Configuration
@@ -80,7 +86,9 @@ DB_NAME=mydatabase
 3. Run the Go Application:<br/>
 Now, run the Go application directly from your terminal.
 
-`go run main.go`
+```
+go run main.go
+```
 
 You will see logs in your terminal indicating the server has started. The API is now running and accessible at `http://localhost:8080`.
 
@@ -96,10 +104,14 @@ http://localhost:8080/api/v1/books
 ```
 #### Example: Get all books
 
-`curl http://localhost:8080/api/v1/books`
+```
+curl http://localhost:8080/api/v1/books
+```
 
 #### Running Unit Tests
 
 The unit tests use mocks and do not require a database connection. You can run them at any time with the following command:
 
-`go test -v ./...`
+```
+go test -v ./...
+```

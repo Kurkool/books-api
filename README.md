@@ -1,4 +1,4 @@
-# Go, Gin & GORM CRUD API with Docker & MySQL
+# Go, Gin & GORM CRUD Books API with Docker & MySQL
 
 This project is a complete, containerized CRUD (Create, Read, Update, Delete) API built with Golang, the Gin web framework, and the GORM library. It follows a clean architecture using a repository pattern to decouple the application logic from the database, enabling easy testing with mocks.
 
